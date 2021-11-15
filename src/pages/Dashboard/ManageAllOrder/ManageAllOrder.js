@@ -14,7 +14,7 @@ const ManageAllOrder = () => {
 
     // load orders to order collection
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://mighty-journey-58632.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [update])
@@ -22,7 +22,7 @@ const ManageAllOrder = () => {
     // handle status update by put method
     const handleShipped = id => {
         const newId = { id }
-        fetch('http://localhost:5000/approve', {
+        fetch('https://mighty-journey-58632.herokuapp.com/approve', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +42,7 @@ const ManageAllOrder = () => {
     const handleDelete = (id) => {
         //   confirmation message
         if (window.confirm("Do you really want to leave?")) {
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://mighty-journey-58632.herokuapp.com/order/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

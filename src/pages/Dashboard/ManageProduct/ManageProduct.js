@@ -13,13 +13,13 @@ const ManageProduct = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/explore')
+        fetch('https://mighty-journey-58632.herokuapp.com/explore')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://mighty-journey-58632.herokuapp.com/product/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

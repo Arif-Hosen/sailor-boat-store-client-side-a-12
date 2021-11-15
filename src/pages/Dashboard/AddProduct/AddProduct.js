@@ -24,7 +24,7 @@ const AddProduct = () => {
     // after button click product object post on database collection
     const handleOnSubmit = e => {
         // work due
-        fetch('http://localhost:5000/addproduct', {
+        fetch('https://mighty-journey-58632.herokuapp.com/addproduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
