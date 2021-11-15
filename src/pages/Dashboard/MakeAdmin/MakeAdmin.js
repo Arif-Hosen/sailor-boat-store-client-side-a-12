@@ -6,13 +6,14 @@ const MakeAdmin = () => {
     const [success, setSuccess] = useState(false);
 
     const handleOnBlur = e => {
+        console.log(e.target.value)
         setEmail(e.target.value);
         e.preventDefault();
     }
 
     const handleAdminSubmit = e => {
         const user = { email }
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://mighty-journey-58632.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

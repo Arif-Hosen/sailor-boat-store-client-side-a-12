@@ -24,7 +24,7 @@ const Navigation = () => {
                 </IconButton> */}
                     <Typography variant="h6" component="div" >
                         {/* <i class="fas fa-ship"></i> */}
-                        <Link to='/' style={{ textDecoration: 'none' }}>
+                        <Link to='/' style={{ textDecoration: 'none', fontStyle: 'italic' }}>
                             <i style={{ fontSize: 30, margin: '8px', color: 'black' }} className="fas fa-anchor"></i>
                             <span style={{ color: 'black', fontWeight: 400 }}>  SAILOR BOAT</span>
                             <span style={{ color: 'white', fontWeight: 300 }}> STORE</span>
@@ -32,15 +32,18 @@ const Navigation = () => {
 
 
                     </Typography>
+
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 
                     </Typography>
+                    <Link to='/' style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Home</Button></Link>
                     <Link to='/explore' style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit">Explore</Button></Link>
+
                     {user?.email ? <Box>
                         <NavLink to="/dashboard" style={{ textDecoration: 'none', color: 'white' }} >
                             <Button color="inherit">Dashboard</Button>
                         </NavLink>
-                        <span style={{ backgroundColor: 'black', padding: 5, borderRadius: '5px' }}><small>{user.displayName}</small></span>
+                        <span style={{ fontSize: 18, backgroundColor: 'black', padding: 5, borderRadius: '5px' }}> <i style={{ marginRight: 5 }} className="fas fa-user-circle"></i><small>{user.displayName}</small></span>
                         <Button onClick={logOut} color="inherit">Logout</Button>
                     </Box>
 

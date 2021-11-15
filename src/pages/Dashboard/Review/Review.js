@@ -13,14 +13,18 @@ const Review = () => {
         setReview(e.target.value);
     }
     const handleRate = e => {
-        setRate(e.target.value);
+        const rate = e.target.value;
+        if (rate <= 5) {
+            setRate(e.target.value);
+        }
+
     }
 
     const handleOnsubmit = e => {
         const newReview = { name: user.displayName, email: user.email, review: review, rate: rate }
         // console.log(newReview);
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://mighty-journey-58632.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,9 +39,10 @@ const Review = () => {
         <Box>
             <Typography sx={{ my: 7 }} variant='h5'> Give Your valuable Review</Typography>
             <form onSubmit={handleOnsubmit}>
-                <TextField disabled defaultValue={user.displayName} id="outlined-basic" label="Your Name" variant="outlined" />
+                <TextField sx={{ width: '25%' }}
+                    disabled defaultValue={user.displayName} id="outlined-basic" label="Your Name" variant="outlined" />
                 <br />
-                <TextField sx={{ my: 3 }}
+                <TextField sx={{ my: 3, width: '25%' }}
                     onBlur={handleReview}
                     id="outlined-multiline-static"
                     label="Your Feedback"
@@ -47,13 +52,16 @@ const Review = () => {
                 />
                 <br />
                 <TextField
+                    sx={{ width: '25%' }}
                     onBlur={handleRate}
                     id="outlined-number"
-                    label="Rate us"
+                    label="Rate us(0-5)"
                     type="number"
+                    defaultValue='0-5'
                     InputLabelProps={{
                         shrink: true,
                     }}></TextField>
+
                 <br />
                 <Button sx={{ my: 5 }} type='submit' variant='contained'>Submit</Button>
             </form>

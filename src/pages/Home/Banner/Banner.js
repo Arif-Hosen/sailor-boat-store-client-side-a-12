@@ -15,22 +15,22 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
     {
-        label: 'San Francisco – Oakland Bay Bridge, United States',
+        label: 'We provide actual price of the product as market price.',
         imgPath:
             'https://image.freepik.com/free-photo/man-travelling-by-boat-san-sebastian_23-2149121010.jpg',
     },
     {
-        label: 'Bird',
+        label: 'Customers can get help and find answers to questions as soon as they come up—24/7 and in real-time.',
         imgPath:
             'https://image.freepik.com/free-photo/luxury-big-yacht-stay-sea-around-island-background-sky_8353-6005.jpg',
     },
     {
-        label: 'Bali, Indonesia',
+        label: 'We makes customers feel more valued, which inspires greater brand loyalty',
         imgPath:
             'https://image.freepik.com/free-photo/moored-yacht-mediterranean-sea-port-buildings-street-greenery-barcelona-spain_1268-18014.jpg',
     },
     {
-        label: 'Goč, Serbia',
+        label: 'We provide actual price of the product as market price.',
         imgPath:
             'https://image.freepik.com/free-photo/marine-parking-boats-yachts-turkey-yacht-docked-sea-port_158595-6952.jpg',
     },
@@ -99,7 +99,7 @@ function Banner() {
                     bgcolor: 'background.default',
                 }}
             >
-                <Typography style={{ fontSize: 30, color: 'black', marginTop: -400 }} sx={{ mx: 'auto', zIndex: 2 }}>{images[activeStep].label}</Typography>
+                <Typography style={{ fontSize: 25, color: 'red', backgroundColor: '', marginTop: -300 }} sx={{ mx: 'auto', zIndex: 2 }}>{images[activeStep].label}</Typography>
             </Paper>
 
             {/* <MobileStepper

@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Button, Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 
@@ -13,8 +13,8 @@ const Footer = () => {
                             style={{ color: ' white', borderBottom: '3px solid red' }}
                         >About us
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" style={{ color: ' lightGray', paddingTop: 20 }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet...
+                        <Typography variant="body1" color="text.secondary" style={{ color: ' lightGray', paddingTop: 20 }}>
+                            We makes customers feel more valued, which inspires greater brand loyalty.Customers can get help and find answers to questions as soon as they come up—24/7 and in real-time.
                         </Typography>
                     </Box>
                 </Grid>
@@ -22,10 +22,22 @@ const Footer = () => {
                     <Box sx={{ textAlign: 'left', p: 5 }}>
                         <Typography gutterBottom variant="h5" component="div"
                             style={{ color: ' white', borderBottom: '3px solid red' }}
-                        >About us
+                        >Contact
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" style={{ color: ' lightGray', paddingTop: 20 }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet...
+                        <Typography variant="body1" color="text.secondary" style={{ color: ' lightGray', paddingTop: 20 }}>
+                            Telephone: 1-567-124-44227
+                        </Typography>
+                        <Typography variant="body1" color="text.secondary" style={{ color: ' lightGray', paddingTop: 20 }}>
+                            Address: New-York, USA
+                        </Typography>
+                        <Typography variant="body1" color="text.secondary" style={{ color: ' lightGray', paddingTop: 20 }}>
+                            E-mail: sailorboatstore21@gmail.com
+                        </Typography>
+                        <Typography variant="h5" style={{ color: 'white', marginTop: 20 }}>
+                            <i style={{ marginRight: 20, padding: 8, backgroundColor: 'navy', borderRadius: '50%' }} className="fab fa-facebook"></i>
+                            <i style={{ marginRight: 20, padding: 8, backgroundColor: 'red', borderRadius: '50%' }} className="fab fa-youtube"></i>
+                            <i style={{ marginRight: 20, padding: 8, backgroundColor: 'blue', borderRadius: '25px' }} className="fab fa-linkedin"></i>
+                            <i style={{ marginRight: 20, padding: 8, backgroundColor: 'green', borderRadius: '50%' }} className="fas fa-globe-americas"></i>
                         </Typography>
                     </Box>
                 </Grid>
@@ -33,14 +45,23 @@ const Footer = () => {
                     <Box sx={{ textAlign: 'left', p: 5 }}>
                         <Typography gutterBottom variant="h5" component="div"
                             style={{ color: ' white', borderBottom: '3px solid red' }}
-                        >About us
+                        >Newsletter
                         </Typography>
                         <Typography variant="body2" color="text.secondary" style={{ color: ' lightGray', paddingTop: 20 }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet...
+                            <TextField
+                                style={{ backgroundColor: 'white', width: '75%', border: '2px solid red', marginBottom: 15 }}
+                                label="Your E-mail"
+
+                                variant="filled" />
+                            <br />
+                            <Button style={{ width: '75%', backgroundColor: 'red' }} variant='contained'>Subscribe</Button>
                         </Typography>
                     </Box>
                 </Grid>
             </Grid>
+            <Box sx={{ p: 3 }} style={{ backgroundColor: 'red', color: 'white' }}>
+                <Typography variant='h9' >© Sailor Boat Store - 2021 | All Right Reserved. Developed By Arif</Typography>
+            </Box>
         </div>
     );
 };

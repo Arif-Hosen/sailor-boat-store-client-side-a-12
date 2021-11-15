@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://mighty-journey-58632.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [])
@@ -31,7 +31,7 @@ const Products = () => {
 
                     {
                         products.map(product => <Grid item xs={4} sm={4} md={4} >
-                            <Card sx={{ maxWidth: 345, mb: 4, mt: 5, textAlign: 'start' }}>
+                            <Card data-aos="fade-up-right" sx={{ maxWidth: 345, mb: 4, mt: 5, textAlign: 'start' }}>
                                 <CardMedia
                                     component="img"
                                     height="140"

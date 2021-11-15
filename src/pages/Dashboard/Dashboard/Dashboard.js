@@ -21,13 +21,14 @@ import ManageProduct from './../ManageProduct/ManageProduct';
 import MakeAdmin from './../MakeAdmin/MakeAdmin';
 import Review from '../Review/Review';
 import AdminRoute from './../../Login/AdminRoute/AdminRoute';
+import DashboardHome from './../DashboardHome/DashboardHome';
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { admin, logOut } = useAuth();
+    const { user, admin, logOut } = useAuth();
 
     let { path, url } = useRouteMatch();
 
@@ -36,12 +37,16 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div>
+        <div style={{ textAlign: 'left' }}>
             <Toolbar />
             <Divider />
+            <Typography sx={{ textAlign: 'center' }}>
+                <i style={{ fontSize: 35 }} className="fas fa-user-circle"></i><br /> {user.displayName}
+            </Typography>
             <Link to='/home'><Button color="inherit">Home</Button></Link>
             <br />
             {!admin && <Box>
+
                 <Link to={`${url}/pay`}><Button color="inherit">Payment</Button></Link>
                 <br />
                 <Link to={`${url}/myorder`}><Button color="inherit">My Order</Button></Link>
@@ -51,6 +56,7 @@ function Dashboard(props) {
 
             </Box>}
             {admin && <Box>
+
                 <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
                 <Link to={`${url}/addProduct`}><Button color="inherit">Add A Product</Button></Link>
                 <br />
@@ -140,13 +146,16 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                {/* <img src='https://image.freepik.com/free-vector/cute-bot-say-users-hello-chatbot-greets-online-consultation_80328-195.jpg' alt="" /> */}
+
 
                 <Switch>
                     {/* user see this route */}
                     <Route path='/home'>
                         <Home></Home>
                     </Route>
+                    {/* <Route exact path={`${path}/`}>
+                        <DashboardHome></DashboardHome>
+                    </Route> */}
                     <Route path={`${path}/pay`}>
                         <Pay></Pay>
                     </Route>

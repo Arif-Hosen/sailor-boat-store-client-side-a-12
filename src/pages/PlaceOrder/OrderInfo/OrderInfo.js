@@ -26,12 +26,13 @@ const OrderInfo = ({ productName, productId }) => {
         const order = {
             ...orderInfo,
             productName: productName,
-            productId: productId
+            productId: productId,
+            status: 'Pending...'
         }
         console.log(order);
         // console.log(appointment);
         // send to server
-        fetch('http://localhost:5000/order', {
+        fetch('https://mighty-journey-58632.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

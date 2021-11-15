@@ -21,6 +21,7 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // error clear
                 setAuthError('');
+                // set new user in user state
                 const newUser = { email, displayName: name }
                 setUser(newUser);
                 // save user to databse
@@ -34,7 +35,7 @@ const useFirebase = () => {
 
                 });
 
-                // push replace both are same
+                // push & replace both are same
                 history.replace('/');
             })
             .catch((error) => {
@@ -99,7 +100,7 @@ const useFirebase = () => {
 
     // load users  data to check admin in userCollection (user must be have users db)
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${user.email}`)
+        fetch(`https://mighty-journey-58632.herokuapp.com/user/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin)
@@ -108,12 +109,12 @@ const useFirebase = () => {
 
     }, [user.email])
 
-    // save user to database
+    // save user to database when user registered
     const saveUser = (email, displayName, method) => {
         // object property and its variable of value is same
         const user = { email, displayName };
         // console.log('test', user);
-        fetch('http://localhost:5000/users', {
+        fetch('https://mighty-journey-58632.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

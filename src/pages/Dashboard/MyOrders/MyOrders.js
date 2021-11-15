@@ -13,17 +13,17 @@ const MyOrders = () => {
     const [myOrders, setMyorders] = useState([]);
     const { user } = useAuth();
     useEffect(() => {
-        const url = `http://localhost:5000/myorder/${user.email}`
+        const url = `https://mighty-journey-58632.herokuapp.com/myorder/${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setMyorders(data))
     }, [])
 
-    // delete api
+    // delete myorder by delete api
     const handleDelete = (id) => {
-        // window.confirm('Are you sure you wish to delete this item?')
+        //   confirmation message
         if (window.confirm("Do you really want to leave?")) {
-            fetch(`http://localhost:5000/myorder/${id}`, {
+            fetch(`https://mighty-journey-58632.herokuapp.com/myorder/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -50,7 +50,7 @@ const MyOrders = () => {
                             <TableCell>Product Name</TableCell>
                             <TableCell >Email</TableCell>
                             <TableCell >Phone</TableCell>
-                            <TableCell >Address</TableCell>
+                            <TableCell >Order Status</TableCell>
                             <TableCell >Cancel</TableCell>
 
                         </TableRow>
@@ -67,7 +67,8 @@ const MyOrders = () => {
 
                                 <TableCell >{row.email}</TableCell>
                                 <TableCell >{row.phone}</TableCell>
-                                <TableCell >{row.address}</TableCell>
+                                <TableCell ><Button
+                                    style={{ backgroundColor: 'gold', color: 'black' }} variant='contained'>{row.status}</Button></TableCell>
                                 <TableCell ><Button
                                     onClick={() => handleDelete(row.productId)}
                                     variant='contained' style={{ backgroundColor: 'salmon' }}>Cancel Order</Button></TableCell>
