@@ -34,11 +34,14 @@ const Login = () => {
             <Container>
                 <Grid container spacing={2}>
 
-                    <Grid item xs={12} md={6}>
+                    <Grid data-aos="flip-right" item xs={12} md={6}>
                         <img style={{ width: '100%', marginTop: 20 }} src='https://image.freepik.com/free-vector/happy-man-his-boat-background_23-2147620627.jpg' alt='log'></img>
                     </Grid>
 
-                    <Grid item sx={{ mt: 8, mx: 'auto' }} xs={8} md={6}>
+                    <Grid data-aos="fade-left"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="500" item sx={{ mt: 8, mx: 'auto' }} xs={8} md={6}>
                         <Typography variant="body1" gutterBottom>
                             Login
                         </Typography>

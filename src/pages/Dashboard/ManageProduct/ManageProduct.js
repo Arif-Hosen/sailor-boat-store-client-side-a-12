@@ -33,7 +33,7 @@ const ManageProduct = () => {
 
     return (
         <div>
-            <Typography sx={{ mt: 8, mb: 5 }} variant='h5'>Manage <span style={{ color: 'red' }}>Product</span></Typography>
+            <Typography data-aos="fade-right" sx={{ mt: 8, mb: 5 }} variant='h5'>Manage <span style={{ color: 'red' }}>Product</span></Typography>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>

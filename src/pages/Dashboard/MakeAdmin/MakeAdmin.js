@@ -1,4 +1,4 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Alert, Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
 const MakeAdmin = () => {
@@ -33,7 +33,7 @@ const MakeAdmin = () => {
 
     return (
         <div>
-            <h2>Make an Admin</h2>
+            <Typography data-aos="fade-right" sx={{ my: 7 }} variant='h5'> Make An <span style={{ color: 'red' }} >Admin</span></Typography>
             <form onSubmit={handleAdminSubmit}>
                 <TextField
                     sx={{ width: '50%' }}

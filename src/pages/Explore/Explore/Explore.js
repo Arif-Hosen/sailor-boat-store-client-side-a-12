@@ -35,8 +35,10 @@ const Explore = () => {
 
                         {
                             products.map(product => <Grid item xs={4} sm={4} md={4} >
-                                <Card sx={{ maxWidth: 345, mb: 4, mt: 5, textAlign: 'start' }}>
-                                    <CardMedia
+                                <Card data-aos="fade-right"
+                                    data-aos-offset="300"
+                                    data-aos-easing="ease-in-sine" sx={{ maxWidth: 345, mb: 4, mt: 5, textAlign: 'start' }}>
+                                    <CardMedia data-aos="flip-left"
                                         component="img"
                                         height="140"
                                         image={product.img}
@@ -67,7 +69,7 @@ const Explore = () => {
 
             </Box>
             <Footer></Footer>
-        </div>
+        </div >
 
 
     );

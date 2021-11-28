@@ -65,7 +65,7 @@ function Dashboard(props) {
                 <Link to={`${url}/manageProduct`}><Button color="inherit">Manage Products</Button></Link>
                 <br />
             </Box>}
-            <Button variant='contained' onClick={logOut} color="inherit">Logout</Button>
+            <Button style={{ border: '1px solid navy' }} sx={{ mt: 5 }} variant='contained' onClick={logOut} color="inherit">Logout</Button>
 
             {/* <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (

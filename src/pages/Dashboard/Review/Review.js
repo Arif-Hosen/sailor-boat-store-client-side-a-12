@@ -37,7 +37,7 @@ const Review = () => {
 
     return (
         <Box>
-            <Typography sx={{ my: 7 }} variant='h5'> Give Your valuable Review</Typography>
+            <Typography data-aos="fade-left" sx={{ my: 7 }} variant='h5'> Give Your Valuable <span style={{ color: 'red' }} >Review</span></Typography>
             <form onSubmit={handleOnsubmit}>
                 <TextField sx={{ width: '25%' }}
                     disabled defaultValue={user.displayName} id="outlined-basic" label="Your Name" variant="outlined" />

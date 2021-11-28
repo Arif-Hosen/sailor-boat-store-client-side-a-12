@@ -25,7 +25,10 @@ const Reviews = () => {
             <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
 
 
-                {reviews.map(review => <Grid xs={4} sm={4} md={4}> <Paper data-aos="fade-right" sx={{ p: 3, m: 2 }}>
+                {reviews.map(review => <Grid xs={4} sm={4} md={4}> <Paper data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000" sx={{ p: 3, m: 2 }}>
+
                     <Typography variant='h6'>
                         <i style={{ fontSize: 35 }} className="fas fa-user-circle"></i><br />
                         {review.name}

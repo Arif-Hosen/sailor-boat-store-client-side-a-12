@@ -24,14 +24,14 @@ const Products = () => {
 
         <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
             <Container>
-                <Typography variant='h4' sx={{ mt: 9 }}>
+                <Typography data-aos="fade-right" variant='h4' sx={{ mt: 9 }}>
                     Our <span style={{ color: ' #ff0101' }} >Collection</span>
                 </Typography>
                 <Grid container spacing={1} columns={{ xs: 4, sm: 8, md: 12 }}>
 
                     {
                         products.map(product => <Grid item xs={4} sm={4} md={4} >
-                            <Card data-aos="fade-up-right" sx={{ maxWidth: 345, mb: 4, mt: 5, textAlign: 'start' }}>
+                            <Card data-aos="zoom-in-up" sx={{ maxWidth: 345, mb: 4, mt: 5, textAlign: 'start' }}>
                                 <CardMedia
                                     component="img"
                                     height="140"
@@ -39,17 +39,18 @@ const Products = () => {
                                     alt="green iguana"
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
+                                    <Typography data-aos="fade-right" gutterBottom variant="h5" component="div">
                                         {product.name}
                                     </Typography>
-                                    <Typography variant="body2" color="text.secondary">
+                                    <Typography data-aos="fade-left" variant="body2" color="text.secondary">
                                         {product.description}
                                     </Typography>
                                     <Typography gutterBottom variant="h6" component="div">
                                         $    {product.price}
                                     </Typography>
                                 </CardContent>
-                                <Link style={{ textDecoration: 'none', color: 'white' }}
+                                <Link data-aos="fade-up"
+                                    data-aos-duration="3000" style={{ textDecoration: 'none', color: 'white' }}
                                     to={`/placeorder/${product._id}`}>
                                     <Button style={{ backgroundColor: ' #ff0101', margin: 10 }} variant='contained' sx={{ fontWeight: 300 }}>Order Now</Button>
                                 </Link>

@@ -43,7 +43,7 @@ const AddProduct = () => {
     }
     return (
         <Box>
-            <Typography variant='h5'>Add <span style={{ color: 'red' }}>Product</span></Typography>
+            <Typography data-aos="fade-right" variant='h5'>Add <span style={{ color: 'red' }}>Product</span></Typography>
 
             <form onSubmit={handleOnSubmit}>
                 <TextField

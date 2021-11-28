@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import useAuth from './../../../Hooks/useAuth';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 const MyOrders = () => {
     const [myOrders, setMyorders] = useState([]);
@@ -42,7 +42,7 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h2>Welcome {user.displayName}</h2>
+            <Typography data-aos="fade-left" sx={{ mt: 7 }} variant='h5'>Welcome <span style={{ color: 'red' }}>{user.displayName}</span></Typography>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
